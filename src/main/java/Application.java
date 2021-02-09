@@ -1,10 +1,13 @@
+import com.opencsv.exceptions.CsvException;
 import components.Library;
+
+import java.io.IOException;
 
 public class Application {
 
-    private Library library;
+    private final Library library;
 
-    public Application() {
+    public Application() throws IOException, CsvException {
         this.library = new Library();
     }
 

@@ -2,21 +2,31 @@ package components;
 
 public class Book {
 
-    private final int id;
     private final String title;
     private final String author;
+    private User isBorrowedBy;
 
-    public Book(int id, String title, String author) {
-        this.id = id;
+    public Book(String title, String author) {
         this.title = title;
         this.author = author;
+        this.isBorrowedBy = null;
     }
 
-    public String getAuthor() {
+    public String author() {
         return author;
     }
 
-    public String getTitle() {
+    public String title() {
         return title;
     }
+
+    public User isBorrowed() {
+        return isBorrowedBy;
+    }
+
+    public void setBorrowed(User user) {
+        this.isBorrowedBy = user;
+    }
+
+
 }
