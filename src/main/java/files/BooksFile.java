@@ -10,8 +10,7 @@ import java.util.ArrayList;
 
 public class BooksFile implements IFileReader, IFileWriter {
 
-    private final String fileName = "/csv/library.csv";
-    private final String filePath = this.getClass().getResource(fileName).getFile();
+    private final String filePath = "data/library.csv";
     private final CSVReader csvReader;
 
 
@@ -50,7 +49,13 @@ public class BooksFile implements IFileReader, IFileWriter {
             csvWriter.append(',');
             csvWriter.append(book.author());
             csvWriter.append(',');
-            csvWriter.append(book.isBorrowed().login());
+            User user = book.isBorrowed();
+            if (user == null) {
+                csvWriter.append("");
+            } else {
+                csvWriter.append(user.login());
+            }
+
             csvWriter.append('\n');
         }
         csvWriter.flush();

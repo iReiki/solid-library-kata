@@ -10,8 +10,7 @@ import java.util.ArrayList;
 
 public class UserFile implements IFileReader, IFileWriter {
 
-    private final String fileName = "/csv/library.csv";
-    private final String filePath = this.getClass().getResource(fileName).getFile();
+    private final String filePath = "data/users.csv";
     private final CSVReader csvReader;
 
     public UserFile() throws FileNotFoundException {
